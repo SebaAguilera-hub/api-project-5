@@ -18,7 +18,7 @@ const signUp = async(req, res) => {
             })
         } else {
             return res.json({
-                message: 'el usuario ya esta existe'
+                message: 'el usuario ya existe'
             })
         }
     } catch (error) {
@@ -44,7 +44,7 @@ const login = async (req, res) => {
             })
         } else {
             return res.json({
-                messsage: 'OK',
+                message: 'OK usuario encontrado',
                 detail: {
                     user,
                     token: user.generateJWT()
@@ -53,7 +53,7 @@ const login = async (req, res) => {
         }
     } catch (error) {
         return res.json({
-            message: 'Error',
+            message: 'Error en el login',
             detail: error.message
         })
     }
@@ -103,7 +103,7 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
     try {
-        const response = await User.findByIdAndDelete(req.body.userId)
+        const response = await User.findByIdAndDelete(req.body.id) //antes era userId
         if (response) {
             return res.json({
                 message: 'Usuario eliminado exitosamente',

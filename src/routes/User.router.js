@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router(); //PERMITE USAR router.->
 const { getAllUsers, signUp, login, updateUser, deleteUser } = require('../controllers/User.controller');
-const auth = require('../middlewares/auth')
+const auth = require('../middlewares/auth') //middleware
 
-router.get('/', auth, getAllUsers);
+router.get('/',auth, getAllUsers);
 router.post('/signup', signUp);
 router.post('/login', login);
 router.put('/', updateUser);

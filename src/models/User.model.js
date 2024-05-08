@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const secret = process.env.JWT_SECRET
 
 const userSchema = new mongoose.Schema(
@@ -15,12 +16,13 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+//Definir metodos al esquema
 userSchema.methods.hashPassword = function(userPassword) {
   this.password = bcrypt.hashSync(userPassword, 16);
 }
-
+//Generar un jwt
 userSchema.methods.generateJWT = function() {
-  return jwt.sign({ userId: this._id}, secret);
+  return jwt.sign({ user_Id: this._id}, secret); //cambie user_Id por id
 }
 
 const User = mongoose.model('User', userSchema);

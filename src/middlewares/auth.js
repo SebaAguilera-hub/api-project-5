@@ -1,5 +1,5 @@
-const jwt = require('express-jwt')
-const secret = process.env.JWT_SECRET
+const jwt = require('express-jwt') // verificar el token
+const secret = process.env.JWT_SECRET // verifica que el token sea correcto
 
 const validateToken = (req) => {
     let { authorization } = req.headers;

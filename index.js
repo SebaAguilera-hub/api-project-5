@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 
 //CORN - MIDDLEWARE
-app.use(cors())
+
 app.use(express.json());
 
 

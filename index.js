@@ -11,8 +11,9 @@ const port = process.env.PORT || 3000;
 //CONEXION A LA BASE DE DATOS
 mongoose.connect(process.env.MONGODB_URI);
 
+
 //CORN - MIDDLEWARE
-// app.use(corns())
+app.use(cors())
 app.use(express.json());
 
 

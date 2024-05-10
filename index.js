@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./src/routes/index');
+const cors = require("cors")
 const app = express();
 require('dotenv').config();
 
@@ -12,10 +13,10 @@ const port = process.env.PORT || 3000;
 mongoose.connect(process.env.MONGODB_URI);
 
 
-//CORN - MIDDLEWARE
+//CORS - MIDDLEWARE
 
 app.use(express.json());
-
+app.use(cors())
 
 //ENRUTAMIENTO A OTRAS RUTAS
 app.use('/v1', routes);

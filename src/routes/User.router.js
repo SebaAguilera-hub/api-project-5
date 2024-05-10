@@ -7,7 +7,7 @@ router.get('/',auth, getAllUsers);
 router.post('/signup', signUp);
 router.post('/login', login);
 router.put('/', updateUser);
-router.delete('/', deleteUser);
+router.delete('/delete', deleteUser);
 
 //http:localhost:3000/v1/users/signup
 //http:localhost:3000/v1/users/login

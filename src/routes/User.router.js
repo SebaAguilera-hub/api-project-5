@@ -8,7 +8,7 @@ router.post('/signup', signUp);
 router.post('/login', login);
 router.put('/actualizar',auth ,updateUser);
 router.delete('/delete', deleteUser);
-router.get("/verificar-usuario", auth, verificarUsuario)
+router.get("/verificar-usuario", verificarUsuario) // le quite el auth
 
 //http:localhost:3000/v1/users/signup
 //http:localhost:3000/v1/users/login

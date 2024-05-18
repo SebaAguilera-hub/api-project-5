@@ -3,6 +3,23 @@ const Cuadro = require("../models/Cuadro.model")
 // const bcrypt = require("bcrypt")
 
 
+const obtenerCuadro = async (req,res)=> {
+    const {id} = req.params
+    try{
+        const cuadro = await Cuadro.findById(id)
+
+        res.json({
+            cuadro
+        })
+    }catch(error){
+        res.json({
+            message: "Error al buscar el cuadro",
+            detail: message.error
+        })
+    }
+}
+
+
 const createCuadro = async(req,res) =>{
     // const {
     //     name,
@@ -109,4 +126,5 @@ module.exports = {
     deleteCuadro,
     getAllCuadros,
     updateCuadro,
-    createCuadro }
+    createCuadro,
+    obtenerCuadro }

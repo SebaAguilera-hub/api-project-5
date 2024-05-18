@@ -3,7 +3,7 @@ const router = express.Router();
 const userRoutes = require('./User.router');
 const cuadroRoutes = require("./Cuadro.router")
 
-router.use('/users', userRoutes);
+router.use('/user', userRoutes);
 router.use("/cuadros", cuadroRoutes);
 
 

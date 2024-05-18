@@ -65,7 +65,7 @@ const createCuadro = async(req,res) =>{
 const getAllCuadros = async(req,res)=>{
     try{
        const response = await Cuadro.find()
-       console.log(response)
+
        if(response){
             return res.json({
                 message: "cuadros",

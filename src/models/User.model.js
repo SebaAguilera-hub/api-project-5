@@ -8,8 +8,13 @@ const userSchema = new mongoose.Schema(
   {
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
-    password: { type: String, required: true },
+    country:{ type: String, default: "" },
+    adress:{ type: String, default: ""},
+    city:{ type: String, default: ""},
+    state:{type: String, default: ""},
+    zipcode: {type: String, default: ""},
     email: { type: String, required: true },
+    password: { type: String, required: true },
   },
   {
     timestamps: true,
